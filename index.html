@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>My &amp; Responsive Portfolio</title>
+<title>My Portfolio</title>
 <style>
   /* RESET & BASE */
   *, *::before, *::after {
@@ -892,6 +892,14 @@
   hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('open');
   });
+  // Close nav menu on nav-link click, for mobile
+ navLinks.querySelectorAll('a').forEach(link => {
+ link.addEventListener('click', () => {
+ if(navLinks.classList.contains('open')){
+ navLinks.classList.remove('open');
+ }
+ });
+ });
 
   // Keyboard accessible hamburger toggle
   hamburger.addEventListener('keydown', e => {
